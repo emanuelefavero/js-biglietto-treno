@@ -1,21 +1,18 @@
-// Constants
 const PRICE_PER_KM = 0.21;
 const MINOR_DISCOUNT = 0.2;
 const SENIOR_DISCOUNT = 0.4;
 const MINOR_AGE = 18;
 const SENIOR_AGE = 65;
 
-// Title
 console.log('Calcolo del prezzo biglietto treno');
 
-// Ask the user for the number of kilometers and their age
+// Get user input
 const km = Number(prompt('Quanti km vuoi percorrere?'));
 const age = Number(prompt('Quanti anni hai?'));
 
-// Validate input
 const isValidInput = !isNaN(km) && !isNaN(age) && km > 0 && age > 0;
 
-// Calculate the price based on the input and apply discounts if applicable
+// On Valid Input: Calculate discount, price, and format output
 if (isValidInput) {
   let discount = 0;
   if (age < MINOR_AGE) discount = MINOR_DISCOUNT;
