@@ -6,6 +6,11 @@ The assignment asks for a program that calculates the price of a train ticket ba
 
 > Note: See [Technical Notes](#technical-notes) for details on the implementation.
 
+## Solution
+
+- Open `index.html` in a browser to see the program in action
+- Explore the code in `script.js` to see the solution implementation
+
 ## Goal
 
 The program asks the user for:
