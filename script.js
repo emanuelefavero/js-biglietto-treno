@@ -10,23 +10,22 @@ console.log('Calcolo del prezzo biglietto treno');
 const km = Number(prompt('Quanti km vuoi percorrere?'));
 const age = Number(prompt('Quanti anni hai?'));
 
+// Validate input
 const isValidInput = !isNaN(km) && !isNaN(age) && km > 0 && age > 0;
 
-// On Valid Input: Calculate discount, price, and format output
 if (isValidInput) {
+  // Calculate discount
   let discount = 0;
   if (age < MINOR_AGE) discount = MINOR_DISCOUNT;
   else if (age >= SENIOR_AGE) discount = SENIOR_DISCOUNT;
 
+  // Calculate price and format it to 2 decimal places
   const basePrice = km * PRICE_PER_KM;
   const price = basePrice * (1 - discount);
   const formattedPrice = price.toFixed(2);
 
   console.log(`Il prezzo del biglietto è €${formattedPrice}`);
-}
-
-// Handle invalid input
-else {
+} else {
   console.log("Per favore, inserisci un numero valido per i km e l'età.");
 }
 
