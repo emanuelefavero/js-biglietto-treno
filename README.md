@@ -4,7 +4,7 @@ JavaScript exercise from my web development course.
 
 The assignment asks for a program that calculates the price of a train ticket based on the number of kilometers to travel and the passenger's age.
 
-> Note: See [technical Notes](#technical-notes) for details on the implementation.
+> Note: See [Technical Notes](#technical-notes) for details on the implementation.
 
 ## Goal
 
