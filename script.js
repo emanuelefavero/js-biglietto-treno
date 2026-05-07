@@ -1,28 +1,37 @@
-// TODO validate input (km > 0, age > 0), check empty prompt, check if input is a number?
+// Constants
+const PRICE_PER_KM = 0.21;
+const MINOR_DISCOUNT = 0.2;
+const SENIOR_DISCOUNT = 0.4;
+const MINOR_AGE = 18;
+const SENIOR_AGE = 65;
 
+// Title
 console.log('Calcolo del prezzo biglietto treno');
 
 // Ask the user for the number of kilometers and their age
 const km = Number(prompt('Quanti km vuoi percorrere?'));
 const age = Number(prompt('Quanti anni hai?'));
 
-// Define constants for the price per kilometer and discounts
-const PRICE_PER_KM = 0.21;
-const DISCOUNT_UNDER_18 = 0.2;
-const DISCOUNT_OVER_65 = 0.4;
+// Validate input
+const isValidInput = !isNaN(km) && !isNaN(age) && km > 0 && age > 0;
 
-// Calculate the discount based on age
-let discount = 0;
-if (age < 18) discount = DISCOUNT_UNDER_18;
-else if (age >= 65) discount = DISCOUNT_OVER_65;
+// Calculate the price based on the input and apply discounts if applicable
+if (isValidInput) {
+  let discount = 0;
+  if (age < MINOR_AGE) discount = MINOR_DISCOUNT;
+  else if (age >= SENIOR_AGE) discount = SENIOR_DISCOUNT;
 
-// Calculate the final price and format it to two decimal places
-const basePrice = km * PRICE_PER_KM;
-const price = basePrice * (1 - discount);
-const formattedPrice = price.toFixed(2);
+  const basePrice = km * PRICE_PER_KM;
+  const price = basePrice * (1 - discount);
+  const formattedPrice = price.toFixed(2);
 
-// Output the final price
-console.log(`Il prezzo del biglietto e' €${formattedPrice}`);
+  console.log(`Il prezzo del biglietto è €${formattedPrice}`);
+}
+
+// Handle invalid input
+else {
+  console.log("Per favore, inserisci un numero valido per i km e l'età.");
+}
 
 // -------------------
 // Test cases:
