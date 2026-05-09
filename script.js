@@ -26,10 +26,15 @@ if (isValidInput) {
   // Price calculation
   const basePrice = km * PRICE_PER_KM;
   const price = basePrice * (1 - discount);
-  const formattedPrice = price.toFixed(2);
+
+  // Format price
+  const formattedPrice = price.toLocaleString('it-IT', {
+    style: 'currency',
+    currency: 'EUR',
+  });
 
   // Success Output
-  const resultMessage = `Il prezzo del biglietto è €${formattedPrice}`;
+  const resultMessage = `Il prezzo del biglietto è ${formattedPrice}`;
   console.log(resultMessage);
   output.textContent = resultMessage;
 } else {
