@@ -40,4 +40,5 @@ It then calculates the final ticket price using these rules:
 - Before calculating the price, the input is validated.
 - The discount is handled with a `discount` variable, initialized to `0` and updated only when the passenger belongs to a discounted category.
 - The calculation is split into `basePrice`, `price`, and `formattedPrice` to keep each step readable.
-- `toFixed(2)` is used to display the final price with two decimal digits.
+- `toLocaleString('it-IT')` is used to format the final price as an Italian Euro currency value.
+- The result is displayed directly in the page through the `#output` element.
